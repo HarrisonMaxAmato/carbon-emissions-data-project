@@ -178,3 +178,10 @@ doesn't end up sitting in your portfolio repo).
 **Share-out:** this week during TIP, we'll share out your data-quality
 questions, how you used AI, and any reflections from the project — so come
 ready to talk about your project.
+
+
+
+
+#I noticed that china had by far the largest emission of co2.
+I also noticed qatar has the highest emissions per person - 37.9 tonnes
+India has an exceptionally high co2 emissions given its gdp.
