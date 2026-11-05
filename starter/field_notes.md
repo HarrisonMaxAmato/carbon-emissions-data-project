@@ -59,11 +59,11 @@ safe peek at it — not the whole 254-row file, just the **first 5 lines**,
 enough to see the shape of it without scrolling past everything.
 
 ```bash
-# TODO: a command that prints just the first 5 lines of the raw file
+# head -n 5 /Users/Marcy_Student/carbon-emissions-data-project-main/data/co2_emissions_2022.csv
 ```
 
 **Output:**
-_TODO: paste what you actually got_
+
 
 **What I notice:** _TODO — your raw observations, in your own words_
 

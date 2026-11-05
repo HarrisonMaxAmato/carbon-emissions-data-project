@@ -185,3 +185,8 @@ ready to talk about your project.
 #I noticed that china had by far the largest emission of co2.
 I also noticed qatar has the highest emissions per person - 37.9 tonnes
 India has an exceptionally high co2 emissions given its gdp.
+
+
+
+Why does India have such a high co2 emission?
+Does a lower gdp to high population ratiohave a correlation to high co2 emissions?
