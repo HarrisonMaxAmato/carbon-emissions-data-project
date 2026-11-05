@@ -131,19 +131,19 @@ command's output into the next as input.
 36
 
 ```bash
-# TODO: the same idea, but for the gdp column
+# cut -d ',' -f 5 /Users/Marcy_Student/carbon-emissions-data-project-main/data/co2_emissions_2022.csv | tail -n +2 | grep -c '^$'
 ```
 
 **Output:**
-_TODO_
+89
 
 List **at least 2** specific things you'd want to know about how this
 dataset was collected, before trusting any conclusion drawn from it — ground
 at least one in the counts you just found.
 
 **My 2 concerns:**
-1. _TODO_
-2. _TODO_
+1. are the missing iso codes only for non country/soveriegn states/dependant territories or are some countries also missing iso codes, if not that makes it easy to clean
+2. assuming either the later or both of what i referenced above were correct then we can assume that some countries are missing data and why would that be and why so many?
 
 ## 6. Data-quality question for the source
 
@@ -152,7 +152,7 @@ phrase it as a real question you'd send to the data's source/maintainer. A
 good test: could they actually answer it with a concrete yes/no or fact —
 not "is this data good?"
 
-_TODO_
+question one should be easy to verify. I feel as though it is specific enough, i would have simplified it and then just wrote what i wrote if i had seen this before answering.
 
 ## 7. Something you're actually curious about
 
@@ -162,14 +162,17 @@ curious to explore using this data? Pick two specific countries you're
 curious to compare, and look up their full rows.
 
 ```bash
-# TODO: a command that finds a specific country's row by name (repeat for
-# a second country of your choice)
+# grep "India" /Users/Marcy_Student/carbon-emissions-data-pro
+#ject-main/data/co2_emissions_2022.csv
+#grep "Qatar" /Users/Marcy_Student/carbon-emissions-data-pro
+#ject-main/data/co2_emissions_2022.csv
 ```
 
 **Output:**
 _TODO_
 
-**My question:** _TODO_
+**My question:** Why is Indias co2 output so high even though its gdp so low. 
+Why does qatar have the highest co2 emissions per capita. -37.9 tonnes
 
 ## 8. AI-literacy reflection
 
@@ -180,10 +183,9 @@ fact before relying on it professionally — specific enough that you could
 actually follow it, not "I'll be careful."
 
 **Risks:**
-1. _TODO_
-2. _TODO_
+1. make sure that it is reading the data correctly and not roping in misplaced data to its answers
+2. check the source that the data sheet derives its information from
 
-**My rule:** _TODO_
 
 ## 9. Something that went wrong (and how you figured it out)
 
@@ -194,10 +196,10 @@ this at least once. Paste the actual command and what actually happened
 fix — not "I googled it and it worked."
 
 ```bash
-# TODO: a command that errored, or gave you unexpected results
+# cut ',' -f 3 /Users/Marcy_Student/carbon-emissions-data-project-main/data/co2_emissions_2022.csv | tail -n +3 | grep -c '^$'
 ```
 
 **What happened:**
-_TODO: the actual error message, or the unexpected output you got_
 
-**What it told me and how I fixed it:** _TODO_
+nothing happened which was the issue.
+**What it told me and how I fixed it:** I fixed it by checking my notes and seeing i did not write -d
