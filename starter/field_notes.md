@@ -65,7 +65,7 @@ enough to see the shape of it without scrolling past everything.
 **Output:**
 
 
-**What I notice:** _TODO — your raw observations, in your own words_
+It has duplicates of Africa which is not a country so already seems like there might be issues here, for example if it does have duplicates of Africa AND Africa is not a country then the data for Africa could show up as much greater then what its supposed to be.
 
 ## 2. Column names
 
@@ -73,12 +73,10 @@ Next you want to see just the column names by themselves — one per line is
 a lot easier to scan than one long comma-separated row.
 
 ```bash
-# TODO: a command (or combination of commands) that prints just the header
-# row, one column name per line
+# head -n 1 /Users/Marcy_Student/carbon-emissions-data-project-main/data/co2_emissions_2022.csv
 ```
 
-**Output:**
-_TODO_
+country,iso_code,year,population,gdp,co2
 
 ## 3. Column-by-column data type table
 
@@ -88,20 +86,20 @@ row. Column numbers for reference: `country`=1, `iso_code`=2, `year`=3,
 `population`=4, `gdp`=5, `co2`=6.
 
 ```bash
-# TODO: a command that prints the first 6 values from a single column
-# (repeat this for at least 5 of the 6 columns, swapping in each column's number)
+# for col in 1 2 3 4 5 6; do name=$(head -n 1 /Users/Marcy_Student/carbon-emissions-data-project-main/data/co2_emissions_2022.csv | cut -d ',' -f "$col"); printf '\n%s:\n' "$name"; tail -n +2 /Users/Marcy_Student/carbon-emissions-data-project-main/data/co2_emissions_2022.csv | head -n 6 | cut -d ',' -f "$col"; done
+
 ```
 
 Fill in the table from what you actually saw — not a guess from the column
 name alone:
 
-| Column | Inferred type | How I can tell |
+| Country| String | This describe the countrys name |
 |---|---|---|
-| _TODO_ | _TODO_ | _TODO_ |
-| _TODO_ | _TODO_ | _TODO_ |
-| _TODO_ | _TODO_ | _TODO_ |
-| _TODO_ | _TODO_ | _TODO_ |
-| _TODO_ | _TODO_ | _TODO_ |
+| iso_code| String| this is a code to represent a countries in number form |
+| year| date| used to mark countries yearly output, extremely important for tracking data change over time  |
+|population| integer| cant have half of a human, population is used to measure the density of people in a given country which can help explain the reasons why co2 emissions are at that level. |
+|gdp| float | The total market value of a country it can greatly help in understand a countries co2 output perhaps more then any other point of data, is a float because it has decimals. |
+| co2| float| the main focus of the data set and we know its a float because it has decimals. |
 
 **In your own words:** what's the actual difference between a list/array
 and a table? (Not a definition you looked up — explain it the way you'd
@@ -114,7 +112,7 @@ _TODO_
 
 State whether this dataset is structured or unstructured, and why.
 
-_TODO_
+structured although poorly.
 
 ## 5. Before you trust this data
 
@@ -126,12 +124,11 @@ You may need more than one command for this — piping (`|`) feeds one
 command's output into the next as input.
 
 ```bash
-# TODO: a command (or combination) that counts how many rows have a
-# BLANK iso_code
+# cut -d ',' -f 2 /Users/Marcy_Student/carbon-emissions-data-project-main/data/co2_emissions_2022.csv | tail -n +2 | grep -c '^$'
 ```
 
 **Output:**
-_TODO_
+36
 
 ```bash
 # TODO: the same idea, but for the gdp column
